@@ -1,24 +1,71 @@
-# README
+# ChatSpace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Sample https://chat-space-demo.herokuapp.com/
+* (now under construction)
 
-Things you may want to cover:
+## Description
+ChatSpace serves a browser-based chat, 
+also is a part of <span style="color:#ca493c">TECH::CAMP _EXPERT_</span> curriculum.
 
-* Ruby version
+## Features
 
-* System dependencies
+* Online chatting w/ attached images
+* User registration
+* Timeline is automatically updated
 
-* Configuration
+## Environment /dev
 
-* Database creation
+* Ruby 2.3.1
+* Rails 5.0.1
 
-* Database initialization
+## Structure
 
-* How to run the test suite
+### Tables
 
-* Services (job queues, cache servers, search engines, etc.)
+####Users
 
-* Deployment instructions
+* has many **Groups**
 
-* ...
+* has many **Messages**
+
+|columns     |types   |
+|:----------:|:------:|
+|_name*_     |string  |
+|email       |string  |
+|password*   |string  |
+
+####Groups
+
+* has many **Users**
+
+* has many **Messages**
+
+|columns     |types   |
+|:----------:|:------:|
+|group_name* |string  |
+
+####Messages
+
+* belong to **User**
+
+* belong to **Group**
+
+|columns   |types   |
+|:--------:|:------:|
+|body*     |text    |
+|image     |string  |
+|group_id* |integer |
+|user_id*  |integer |
+
+####Group_users
+
+* belong to **User**
+
+* belong to **Group**
+
+|columns   |types   |
+|:--------:|:------:|
+|group_id* |integer |
+|user_id*  |integer |
+
+( * = not null, _Italics_ are indexed)
