@@ -55,13 +55,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # pry
 gem 'pry-rails'
-# devise
-gem 'devise'
 # erb2haml
 gem 'erb2haml'
 # font-awesome-rails
 gem 'font-awesome-rails'
 # haml-rails
 gem 'haml-rails'
-# rails assets vue
-gem 'rails-assets-vue'
+# devise
+gem 'devise'
